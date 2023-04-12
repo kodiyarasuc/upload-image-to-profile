@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload To Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="profile">
+    <h3 class="user">Kodiyarasu</h3>
+        <small>curiouscoder@gmail.com</small>
+       
+        <img src="./Assets/download.png" alt="profile" id="profile-pic">
+        <form>
+    <label for="input-File">Update Image</label>
+        <input class="input" type="file" accept="image/jpeg,image/png,image/jpg" id="input-File">
+        </form>
+    
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script>
+let profilePicEl=document.getElementById('profile-pic');
+let inputEl=document.getElementById('input-File');
+
+inputEl.onchange=function(){
+    profilePicEl.src=URL.createObjectURL(inputEl.files[0])
+}
+    </script>
+</body>
+</html>
